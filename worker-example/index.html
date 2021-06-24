@@ -11,19 +11,11 @@
   <button id="echo-message-button">Отобразить сообщение</button>
 
   <script>
-    const worker = new Worker('worker.js');
     const $hardLoadButton = document.getElementById('hard-load-button');
     const $echoMessageButton = document.getElementById('echo-message-button');
 
-    $hardLoadButton.addEventListener('click', () => {
-      worker.postMessage('hello from main stream!');
-    });
-
+    $hardLoadButton.addEventListener('click', onClickHardLoad);
     $echoMessageButton.addEventListener('click', onClickEchoMessage);
-
-    worker.addEventListener('message', (event) => {
-      console.log('Calc is finished. Result:', event.data);
-    });
 
     function onClickHardLoad() {
       console.log('Начало сложных вычислений');
