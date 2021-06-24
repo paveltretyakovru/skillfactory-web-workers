@@ -1,0 +1,12 @@
+{
+  "name": "worker-example",
+  "version": "1.0.0",
+  "description": "- Программист Филипп Робертс: Что за чертовщина такая event loop?\r https://vk.com/video-63178785_456239029",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -l 5001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "worker-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start:example": "serve -l 5000",
+    "start:study": "serve -l 5001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

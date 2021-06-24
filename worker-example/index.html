@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Workers</title>
+</head>
+<body>
+  <button id="hard-load-button">Запустить вычисления</button>
+  <button id="echo-message-button">Отобразить сообщение</button>
+
+  <script>
+    const worker = new Worker('worker.js');
+    const $hardLoadButton = document.getElementById('hard-load-button');
+    const $echoMessageButton = document.getElementById('echo-message-button');
+
+    $hardLoadButton.addEventListener('click', () => {
+      worker.postMessage('hello from main stream!');
+    });
+
+    $echoMessageButton.addEventListener('click', onClickEchoMessage);
+
+    worker.addEventListener('message', (event) => {
+      console.log('Calc is finished. Result:', event.data);
+    });
+
+    function onClickHardLoad() {
+      console.log('Начало сложных вычислений');
+      for (let i = 0, max = 10000000; i < max; i++) {
+        const date = new Date();
+      }
+      console.log('Конец сложных вычислений');
+    }
+
+    function onClickEchoMessage() {
+      console.log('Check message!');
+    }
+  </script>
+</body>
+</html>
