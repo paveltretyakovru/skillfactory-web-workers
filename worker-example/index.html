@@ -25,13 +25,9 @@
       console.log('Calc is finished. Result:', event.data);
     });
 
-    function onClickHardLoad() {
-      console.log('Начало сложных вычислений');
-      for (let i = 0, max = 10000000; i < max; i++) {
-        const date = new Date();
-      }
-      console.log('Конец сложных вычислений');
-    }
+    worker.addEventListener('error', (error) => {
+      console.error('[ERROR MESSAGE]', error.message);
+    })
 
     function onClickEchoMessage() {
       console.log('Check message!');
